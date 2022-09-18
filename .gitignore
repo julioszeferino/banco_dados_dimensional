@@ -124,6 +124,6 @@ venv.bak/
 .dmypy.json
 dmypy.json
 
-.quick_notes.md
+quick_notes.md
 *.csv
 .logs/
