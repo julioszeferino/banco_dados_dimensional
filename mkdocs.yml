@@ -1,1 +1,3 @@
-site_name: My Docs
+site_name: Documentacao Projeto Data Warehouse
+theme:
+  name: material
