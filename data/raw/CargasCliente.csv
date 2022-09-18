@@ -1,0 +1,21 @@
+CodCliente;Nome;CPF;Sexo;Estado;Cidade;Bairro;Numero;Rua;TelefoneFixo;TelefoneCelular
+1;Ken J Sánchez;15296387930;Feminino;Minas Gerais;Belo Horizonte;Centro;10;Rua Teste das Castanheiras;36418855;
+2;Terri Lee Duffy;10578963690;M;Minas Gerais;Belo Horizonte;Camargos;20;Rua Teste dos Pinheiros;36895566;
+3;Roberto  Tamburello;36925874120;M;Minas Gerais;Belo Horizonte;Santa Efigenia;30;Rua teste dos poetas;36895566;
+4;Rob  Walters;23658979630;M;Minas Gerais;Belo Horizonte;Centro;40;Rua teste dos prazeres;36895566;
+5;Gail A Erickson;78952589746;M;Minas Gerais;Belo Horizonte;Santo Antônio;50;Rua teste da poesia;36895566;
+6;Jossef H Goldberg;78936979890;M;Minas Gerais;Belo Horizonte;Sion;60;Rua teste Guimarães;36895566;
+7;Dylan A Miller;74185236930;M;Minas Gerais;Belo Horizonte;Calafate;70;Rua Alfredo Sorte;36895566;
+8;Diane L Margheim;11594893690;F;Minas Gerais;Belo Horizonte;Pampulha;80;Rua A ;36895566;
+9;Gigi N Matthew;96385276350;F;Minas Gerais;Belo Horizonte;Centro;90;Rua B;36895566;
+10;Michael  Raheem;96389678979;Masculino;Minas Gerais;Belo Horizonte;Centro;100;Rua C ;36895566;
+11;Ovidiu V Cracium;78589632149;M;Minas Gerais;Belo Horizonte;Centro;110;Rua D;;
+12;Thierry B D'Hers;8569586350;Masculino;Minas Gerais;Belo Horizonte;Centro;120;Rua Sônia Abrão;;
+13;Janice M Galvin;78985858585;F;São Paulo;São Paulo;Jardins;130;Rua Primeiro de Maio;;
+14;Michael I Sullivan;85287563201;Masculino;São Paulo;São Paulo;Pinheiros;140;Rua pinheirinho;;
+15;Sharon B Salavaria;78985632050;Feminino;São Paulo;São Paulo;Jardins;150;Rua Primeiro de Maio;;
+16;David M Bradley;75386391470;M;São Paulo;São Paulo;Jardins;160;Rua Primeiro de Maio;;
+17;Kevin F Brown;78985286304;M;São Paulo;São Paulo;Jardins;170;Rua Primeiro de Maio;;
+18;John L Wood;45689520540;Masculino;São Paulo;São Paulo;Pinheiros;180;Rua pinheirinho;;
+19;Mary A Dempsey;78963852820;F;São Paulo;São Paulo;Pinheiros;190;rua pinheirinho;;
+20;Wanida M Benshoof;785636588;F;São Paulo;;;;;;

@@ -125,5 +125,5 @@ venv.bak/
 dmypy.json
 
 quick_notes.md
-*.csv
+.notebooks/*.csv
 .logs/
