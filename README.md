@@ -2,7 +2,7 @@
 
 > Projeto pratico em modo de desafio com a criacao de um banco de dados dimensional desenvolvido como atividade avaliativa do Bootcamp Engenheiro de Dados da XPEducacao.
 
-O modelo dimensional foi criado a partir das metricas propostas pelo [desafio](https://www.docker.com/) .
+O modelo dimensional foi criado a partir das metricas propostas pelo [desafio](docs/desafio_xp.pdf).
 
 Visando tornar o projeto mais robusto, criou-se um pipeline de dados orquestrado pelo **Apache Airflow** que recupera os dados em formato `.csv`, realiza os procedimentos de transformacao e compatibilizacao dos dados com o modelo dimensional desenhado.
 
