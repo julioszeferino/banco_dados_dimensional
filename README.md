@@ -1,6 +1,6 @@
 # Criacao de um Banco de Dados Dimensional
 
-> Projeto pratico em modo de desafio com a criacao de um banco de dados dimensional (Cubo OLAP) desenvolvido como atividade avaliativa do Bootcamp Engenheiro de Dados da XPEducacao.
+> Projeto pratico em modo de desafio com a criacao de um banco de dados dimensional desenvolvido como atividade avaliativa do Bootcamp Engenheiro de Dados da XPEducacao.
 
 O modelo dimensional foi criado a partir das metricas propostas pelo desafio.
 
@@ -12,7 +12,7 @@ Os dados do Redshift sao consumidos pelo **Power BI**, onde sera criado um dashb
 
 ## **Ambiente de Desenvolvimento**
 
-[Docker 20.10.17](https://www.docker.com/)  
+[Docker 20.10.17](https://www.docker.com/)     
 
 ## **Como Executar este Projeto**
 
@@ -21,13 +21,26 @@ Os dados do Redshift sao consumidos pelo **Power BI**, onde sera criado um dashb
 ```bash
 docker-compose up -d
 ```
-
-2. No painel web do `Apache Airflow` cadastrar as conexoes do `AWS S3` com o nome *aws_s3* e do `AWS Redshift` com o nome *aws_redshift*.  
-3. Criar as tabelas necessarias no `AWS Redshift` de acordo com script create_database.sql
-4. Criar um bucket no `AWS S3` com dois niveis: raw e processed
+2. Criar um bucket no `AWS S3` com o nome *seguros*
+3. No painel web do `Apache Airflow` cadastrar a variavel *aws_default_secret* com os dados de acesso da sua conta aws
+```
+{
+    "aws_access_key_id": "",
+    "aws_secret_access_key"
+}
+```
+4. Crie um database chamado **seguros** dentro de cluster na `AWS Redshift`. No painel web do `Apache Airflow` cadastrar a variavel *aws_redshift_seguros_secret* com os dados de acesso ao banco.
+```
+{
+    "user": "",
+    "password": ""
+}
+```
 5. Executar o pipeline de dados no `Apache Airflow`
-6. Configurar e criar as visualizacoes no `Apache Superset`
+6. Configurar e criar as visualizacoes no `Power BI`
 
+## **Dashboard**
+[![Seguros](docs/media/seguros.png)](https://app.powerbi.com/view?r=eyJrIjoiNmIwNDg1ZjctZmY0YS00ZjYwLTlhYjgtMjcxNjQyZDJhZWY1IiwidCI6IjM0Zjc1YTY1LWUzYWItNDY3Yy1hNzhhLTcxNjkwNTBjMWY5MSJ9)  
 
 ## **Referencias**
 
