@@ -52,7 +52,7 @@ $ docker pull julioszeferino/docker-operator-etl
 
 ## **Referencias**
 
-A documentacao completa do projeto esta disponivel neste link: https://julioszeferino.github.io/banco_de_dados_dimensional/ 
+A documentacao completa do projeto esta disponivel neste link: https://julioszeferino.github.io/banco_dados_dimensional/ 
 
 ## Histórico de Atualizações
 
