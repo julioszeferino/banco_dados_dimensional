@@ -1,4 +1,4 @@
-# Projeto Banco de Dados Dimensional
+# Banco de Dados Dimensional
 
 > Projeto pratico em modo de desafio com a criacao de um banco de dados dimensional desenvolvido como atividade avaliativa do Bootcamp Engenheiro de Dados da XPEducacao.
 ## **Estrutura do Projeto**
