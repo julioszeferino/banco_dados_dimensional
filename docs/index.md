@@ -82,7 +82,7 @@ com grandes quantidades de dados e possuir diversos recursos para analise de dad
 
 ![redshift_config](media/arquitetura.png)
 
-## **Pipeline de Dados Apache Airflow
+## **Pipeline de Dados Apache Airflow**
 ![pipeline_dados](media/pipeline.png)
 1. **Task docker-operator-etl:** task responsavel por executar todas as transformacoes nos dados de acordo com o modelo dimensional pre-definido. A task foi isolada em um container docker para facilitar a compatibilidades com as dependencias necessarias para execucao. Os detalhes das transformacoes podem ser encontrados aqui: [julioszeferino/docker-operator-etl](https://hub.docker.com/r/julioszeferino/docker-operator-etl).
 2. **Task envia-arquivos-s3:** task responsavel por armazenar os aarquivos no bucket criado no s3.
