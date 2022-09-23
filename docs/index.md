@@ -19,7 +19,7 @@
 
 ## **Objetivo do Projeto**
 
-O modelo dimensional foi criado a partir das metricas propostas pelo [desafio](docs/desafio_xp.pdf).
+O modelo dimensional foi criado a partir das metricas propostas pelo [desafio](media/desafio_xp.pdf).
 
 Visando tornar o projeto mais robusto, criou-se um pipeline de dados orquestrado pelo **Apache Airflow** que recupera os dados em formato `.csv`, realiza os procedimentos de transformacao e compatibilizacao dos dados com o modelo dimensional desenhado.
 
