@@ -66,9 +66,7 @@ modelo de dados do projeto.
 
 ## **Decisoes Arquiteturais do Projeto**
 
-O `Apache Airflow` e o orquestrador de pipelines mais utilizado do mercado. Alem de ser flexivel tem uma 
-interface bem intuitiva e permite a escalabilidade do projeto atraves dos seus diversos operadores e a 
-possibilidade de processamento distribuido.    
+O `Apache Airflow` e o orquestrador de pipelines mais utilizado do mercado, personalizavel e permite a escalabilidade do projeto com a possibilidade de processamento distribuido.
 O `AWS Redshift` foi escolhido por ser uma solucao totalmente gerenciada e permitir consumir os dados 
 diretamento do `AWS S3`. Alem disso, o banco e otimizado para solucoes de DW.    
 O `AWS S3` e muito utilizado no mercado pela sua flexibilidade e a possibilidade de consumo dos dados
