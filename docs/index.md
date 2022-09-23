@@ -94,7 +94,6 @@ com grandes quantidades de dados e possuir diversos recursos para analise de dad
 ```bash
 docker-compose up -d
 ```
-
 2. Criar um bucket no `AWS S3` com o nome *etl-seguros*.
 3. No painel web do `Apache Airflow` cadastrar a variavel *aws_default_secret* com os dados de acesso da sua conta aws:
 ```
@@ -103,7 +102,6 @@ docker-compose up -d
     "aws_secret_access_key"
 }
 ```
-
 4. Crie um database chamado **seguros** dentro de cluster na `AWS Redshift`. No painel web do `Apache Airflow` cadastrar a variavel *aws_redshift_seguros_secret* com os dados de acesso ao banco:
 ```
 {
