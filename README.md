@@ -12,8 +12,10 @@ Os dados do Redshift sao consumidos pelo **Power BI**, onde sera criado um dashb
 
 ## **Ambiente de Desenvolvimento**
 
-[Docker 20.10.17](https://www.docker.com/)     
+[Docker 20.10.17](https://www.docker.com/)   
 
+## **Arquitetura de Dados**
+![arquitetura](docs/media/arquitetura.png)
 ## **Como Executar este Projeto**
 
 1. Crie uma instancia no `AWS EC2` ou outro provedor da sua escolha, realize o download deste repositorio e execute o docker-compose para realizar o build dos containers:
