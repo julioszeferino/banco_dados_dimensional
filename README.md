@@ -40,8 +40,12 @@ docker-compose up -d
     "password": ""
 }
 ```
-5. Executar o pipeline de dados no `Apache Airflow`
-6. Configurar e criar as visualizacoes no `Power BI`
+5. Realizar o pull da imagem docker responsavel por realizar o processo de ETL nos dados
+```bash
+$ docker pull julioszeferino/docker-operator-etl
+```
+6. Executar o pipeline de dados no `Apache Airflow`
+7. Configurar e criar as visualizacoes no `Power BI`
 
 ## **Dashboard**
 [![Seguros](docs/media/seguros.png)](https://app.powerbi.com/view?r=eyJrIjoiNmIwNDg1ZjctZmY0YS00ZjYwLTlhYjgtMjcxNjQyZDJhZWY1IiwidCI6IjM0Zjc1YTY1LWUzYWItNDY3Yy1hNzhhLTcxNjkwNTBjMWY5MSJ9)  

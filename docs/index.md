@@ -1,6 +1,6 @@
-# Projeto Banco de Dados Relacional
+# Projeto Banco de Dados Dimensional
 
-> Projeto pratico em modo de desafio com a criacao de um banco de dados dimensional (Cubo OLAP) desenvolvido como atividade avaliativa do Bootcamp Engenheiro de Dados da XPEducacao.
+> Projeto pratico em modo de desafio com a criacao de um banco de dados dimensional desenvolvido como atividade avaliativa do Bootcamp Engenheiro de Dados da XPEducacao.
 ## **Estrutura do Projeto**
 
     ├─ dags: pasta de dags do Apache Airflow
@@ -19,11 +19,11 @@
 
 ## **Objetivo do Projeto**
 
-O modelo dimensional foi criado a partir das metricas propostas pelo desafio.
+O modelo dimensional foi criado a partir das metricas propostas pelo [desafio](docs/desafio_xp.pdf).
 
 Visando tornar o projeto mais robusto, criou-se um pipeline de dados orquestrado pelo **Apache Airflow** que recupera os dados em formato `.csv`, realiza os procedimentos de transformacao e compatibilizacao dos dados com o modelo dimensional desenhado.
 
-Os dados modelados sao colocados em um bucket da **AWS S3**, utilizado como *staging area* e, por fim, os dados sao armazenados em um cluster na **AWS Redshift**.
+Os dados modelados sao colocados em um bucket da **AWS S3** e, por fim, os dados sao armazenados em um cluster na **AWS Redshift**.
 
 Os dados do Redshift sao consumidos pelo **Power BI**, onde sera criado um dashboard de acordo com as metricas e necessidades de negocio levantadas.
 
@@ -62,7 +62,7 @@ modelo de dados do projeto.
 [AWS S3](https://aws.amazon.com/pt/s3/)  
 [Docker 20.10.17](https://www.docker.com/)  
 [Python 3.10.7](https://www.python.org/)  
-[Apache Superset](https://superset.apache.org/)    
+[Power BI](https://powerbi.microsoft.com/pt-br/)    
 
 ## **Decisoes Arquiteturais do Projeto**
 
@@ -77,25 +77,52 @@ armazenamentos dos dados em todos os estagios do pipeline.
 O `Docker` permite uma maior compatibilidade e flexibilidade no ambiente de execucao do projeto. Alem disso
 pode ser implementado nao apenas em servidores como tambem em solucoes serverless disponiveis em todas as 
 plataformas de cloud.  
-O `Apache Superset` foi escolhido por ser uma solucao de visualizacao de dados open source e capaz de lidar
-com grandes quantidades de dados.  
+O `Power BI` foi escolhido por ser uma das solucoes de dataviz mais utilizadas pelo mercado, ser capaz de lidar
+com grandes quantidades de dados e possuir diversos recursos para analise de dados.
 
-## **Pipeline de Dados Apache Airflow**
-Em breve.
+![redshift_config](media/arquitetura.png)
+
+## **Pipeline de Dados Apache Airflow
+![pipeline_dados](media/pipeline.png)
+1. **Task docker-operator-etl:** task responsavel por executar todas as transformacoes nos dados de acordo com o modelo dimensional pre-definido. A task foi isolada em um container docker para facilitar a compatibilidades com as dependencias necessarias para execucao. Os detalhes das transformacoes podem ser encontrados aqui: [julioszeferino/docker-operator-etl](https://hub.docker.com/r/julioszeferino/docker-operator-etl).
+2. **Task envia-arquivos-s3:** task responsavel por armazenar os aarquivos no bucket criado no s3.
+3. **Task cria-tabelas-redshift:** task responsavel por estruturar o data warehouse no redshift.
+4. **Task carrega-dados-redshift:** task responsavel por recuperar os dados do s3 e armazenar no cluster redshift do DW.
 ## **Como Executar este Projeto**
 
 1. Crie uma instancia no `AWS EC2` ou outro provedor da sua escolha, realize o download deste repositorio e execute o docker-compose para realizar o build dos containers:
-
 ```bash
 docker-compose up -d
 ```
 
-2. No painel web do `Apache Airflow` cadastrar as conexoes do `AWS S3` com o nome *aws_s3* e do `AWS Redshift` com o nome *aws_redshift*.  
-3. Criar as tabelas necessarias no `AWS Redshift` de acordo com script create_database.sql
-4. Criar um bucket no `AWS S3` com dois niveis: raw e processed
-5. Executar o pipeline de dados no `Apache Airflow`
-6. Configurar e criar as visualizacoes no `Apache Superset`
+2. Criar um bucket no `AWS S3` com o nome *etl-seguros*.
+3. No painel web do `Apache Airflow` cadastrar a variavel *aws_default_secret* com os dados de acesso da sua conta aws:
+```
+{
+    "aws_access_key_id": "",
+    "aws_secret_access_key"
+}
+```
+
+4. Crie um database chamado **seguros** dentro de cluster na `AWS Redshift`. No painel web do `Apache Airflow` cadastrar a variavel *aws_redshift_seguros_secret* com os dados de acesso ao banco:
+```
+{
+    "user": "",
+    "password": ""
+}
+```
+5. Realizar o pull da imagem docker responsavel por realizar o processo de ETL nos dados
+```bash
+$ docker pull julioszeferino/docker-operator-etl
+```
+6. Executar o pipeline de dados no `Apache Airflow`
+7. Configurar e criar as visualizacoes no `Power BI`
 
 
-## **Leituras Recomendadas**
-Em breve.
+## **Configuracao das Variaveis no Apache Airflow**
+A configuracao das variaveis de acesso a aws e ao redshift devem ser feitas na interface web do `Apache Airflow` que por padrao estara disponivel no endereco `http://localhost:8080`. Acesse a aba **Admin**>**Variables**:
+![aws_config](media/variavel_aws_config.png)
+![redshift_config](media/variavel_redshift_config.png)
+
+## **Dashboard**
+[![Seguros](media/seguros.png)](https://app.powerbi.com/view?r=eyJrIjoiNmIwNDg1ZjctZmY0YS00ZjYwLTlhYjgtMjcxNjQyZDJhZWY1IiwidCI6IjM0Zjc1YTY1LWUzYWItNDY3Yy1hNzhhLTcxNjkwNTBjMWY5MSJ9)  
